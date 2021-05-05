@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// components/_service-description
+// -----------------------------------------------------------------------------
+
+    .img-wrapper{
+        position: relative;
+        margin-top: 10px;
+    }
+    .img-header{
+        margin-top: 10px;
+    }
+    
+    .desc-wrap{
+        margin: 5px auto;
+        // padding: 5px;
+        background-color: #F3F3F3;
+        .row{
+            padding : 20px;
+        }
+        .desc-text{
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+    }
+    
+    .breadcrumb{
+        background-color: white;
+    }
+    
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+      }
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+      }
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "\003E";
+      }
+
+    // breadcrumb top
+    .row{
+        .top{
+            display: none;
+        }
+    }
+
+    .back{
+        background-color: #F8BA2B;
+        width: 61px;
+        height: 38px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        align-content: center;
+        position: relative;
+        right: 30px;
+        i{
+            left: 15px;
+            top: 5px;
+            position: relative;
+            color: black;
+        }
+
+    }
+
+    //   Extra small
+    @media only screen and (max-width: 600px){
+        .side-right{
+            ul.breadcrumb{
+                display: none;
+            }
+        }
+        .row{
+            .top{
+                display: inline-block;
+            }
+        }
+        h1{
+            font-size: 18px;
+        }
+    }
+
+  

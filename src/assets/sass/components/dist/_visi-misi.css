@@ -1,0 +1,30 @@
+.visi-misi {
+  align-items: center;
+  text-align: center;
+  background-color: #F3F3F3;
+  padding-bottom: 20px;
+}
+
+.visi, .misi {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+  line-height: 32px;
+  letter-spacing: 0em;
+  margin: auto;
+  font-family: gotham;
+}
+.visi .about-us, .misi .about-us {
+  content: "";
+  border-bottom: 3px solid black;
+  width: 13%;
+  text-align: center;
+  margin: auto;
+}
+
+.visi-desc, .misi-desc {
+  color: #877F7F;
+  font-size: 25px;
+  font-family: Gotham-light;
+}

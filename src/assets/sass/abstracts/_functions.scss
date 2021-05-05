@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+@function image($path, $base: $asset) {
+  @return asset($base, 'img/', $path);
+}
+
+
+// all about text
+// $font-family : unset, 
+// $font-size : 20px, 
+// $font-weight: 400, 
+// $color : $black, 
+// $line-height : 1.5,
+// $text-transform : capitalize, 
+// $text-align : center
+
+@mixin heading($font-size : 20px, $font-weight: 400){
+  font-size: $font-size;
+  font-weight: $font-weight;
+}

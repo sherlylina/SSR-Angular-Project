@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// components/_warning
+// -----------------------------------------------------------------------------
+section.warning {
+    .modal {
+        background-color: rgb(11 11 10 / .93);
+        display: flex !important;
+    }
+    .modal.hide {
+        display: none !important;
+    }
+    .modal-body {
+        border: 1px solid white;
+    }
+    .modal-content {
+        background-color: transparent;
+    }
+    .close {
+        position: absolute;
+        top: -10px;
+        right: -40px;
+        text-shadow: none;
+        color: white;
+    }
+    .close span {
+        font-size: 35px;
+        color: $yellow;
+        font-weight: 600;
+    }
+    h2 {
+        color: white;
+    }
+    h3 {
+        color: $yellow;
+        font-weight: 400;
+    }
+}
+
+@media (max-width:575px){
+    section.warning {
+        img {
+            max-width: 100px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        .modal-body {
+            border: 0;
+        }
+        .close {
+            right: 20px;
+        }
+    }
+}

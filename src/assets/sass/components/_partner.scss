@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// components/_partner
+// -----------------------------------------------------------------------------
+
+main.about-us section.partner {
+    margin-top: 70px;
+}
+
+.partner{
+    margin-top: 4%;
+    margin-bottom: 135px;
+    .title {
+        // margin-bottom: 80px;
+    }
+    .owl-item.center {
+        border-color: $yellow;
+    }
+    .owl-item {
+        border: 4px solid transparent;
+        padding: 10px;
+    }
+    .owl-item:hover{
+        cursor: pointer;
+    }
+    .warp-service {
+        display: block;
+        background-color: $light-gray;
+        margin: 10px;
+        padding: 20px 30px;
+    }
+    h4 {
+        color: black;
+        @include warp-text(3);
+    }
+    .row-service {
+        padding-top: 20px;
+    }
+    img {
+        height: 80px;
+        object-fit: contain;
+    }
+}
+.partner-header{
+    text-align:center;
+    align-items: center;
+    margin: auto;
+    .about-us{
+        content: "";
+        border-bottom: 3px solid black;
+        width: 10%;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.partner-list{
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+
+@media (max-width: 575px){
+    .partner {
+        margin-bottom: 0;
+        padding-bottom: 40px;
+        img {
+            width: 100% !important;
+            margin: auto;
+        }
+    }
+}

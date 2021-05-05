@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// components/_list-contact
+// -----------------------------------------------------------------------------
+.contact-list{
+    background-color:#F3F3F3;
+    margin-top: 20px;
+    padding: 20px;
+}
+.contact-head{
+    text-align: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    span{
+        display: inline-block;
+        background-color: black;
+        width: 100px;
+        height: 3px;
+        position: relative;
+        bottom: 10px;
+    }
+}
+.contact-title{
+    padding: 20px;
+}
+
+
+@media only screen and (max-width:600px){
+    section.list-contact{
+        background-color: #E5E5E5;
+        padding: 1px 1px;
+        .container{
+            margin-bottom: 50px;
+        }
+        .contact-list{
+            background-color: #FFFFFF;
+        }
+        .contact-title{
+            h3{
+                font-size: 18px;
+                color: #333333;
+            }
+        }
+    }
+} 

@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// components/_news-event
+// -----------------------------------------------------------------------------
+
+section.list-event {
+    img:hover, h4:hover {
+        cursor: pointer;
+    }
+    img {
+        border-radius: 5px;
+    }
+    p, .desc {
+        font-size: 0.75rem;
+        color: $black;
+        @include warp-text(4);
+    }
+    .date {
+        padding-bottom: 10px;
+        font-weight: 500;
+        font-size: 10pt;
+    }
+    h2 {
+        font-weight: normal;
+        font-size: 35px;
+        text-transform: none;
+        max-width: 215px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    h4 {
+        @include warp-text(2);
+    }
+    .incoming {
+        h4 {
+            margin-top: 10px;
+        }
+        .content > div:first-child{
+            margin-bottom: 80px !important;
+        }
+    }
+    .paginate {
+      text-align: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .ngx-pagination .current {
+      padding: 0.1875rem 0.625rem;
+      background: var(--yellow);
+      color: #fefefe;
+      cursor: default;
+      border-radius: 10%;
+    }
+}
+
+@media (min-width: 992px) {
+    .incoming {
+        position: absolute;
+        right: 0;
+        padding: 0px 85px 40px 85px;
+        background-color: #F3F3F3;
+    }
+}
+
+@media (max-width: 575px){
+    section.list-event {
+        p, .desc {
+            @include warp-text(3);
+        }
+        h4 {
+            font-size: 14px;
+        }
+        .date {
+            font-size: 10px;
+            padding: 0;
+        }
+        h1, h2 {
+            font-size: 24px;
+        }
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+        .incoming {
+            background-color: white;
+            .date {
+                font-size: 14px;
+            }
+            h4 {
+                font-size: 16px;
+            }
+            .content > div:first-child{
+                margin-bottom: 30px !important;
+            }
+        }
+    }
+}

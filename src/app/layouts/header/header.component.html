@@ -1,0 +1,148 @@
+<header class="main-header" 
+    (click)="onCloseSearch()" 
+    [ngClass]="{'active-m': openListMenu === true}">
+    <div class="container w-head">
+        <div class="row">
+            <div class="d-flex flex-lg-row flex-column align-items-center w-100">
+                <!-- logo -->
+                <div class="w-logo d-lg-block d-flex justify-content-between align-items-center order-1" 
+                     routerLinkActive="current" 
+                     [routerLinkActiveOptions]="{exact: true}">
+                    <a routerLink="/" class="logo d-block" (click)="closeMenu()">
+                        <img class="w-100" src="assets/img/msa.png" alt="">
+                    </a>
+                    <div class="hamburger d-lg-none" (click)="onOpenMenuMobile()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- all menu -->
+                <div class="all-menu pt-lg-2 order-lg-2 order-3">
+                    <ul class="nav no-list flex-lg-row flex-column justify-content-lg-between">
+                        
+                        <li *ngFor="let item of menu"
+                            class="w-title"
+                            [ngClass]="{parent: item.children}" 
+                            routerLinkActive="current"
+                            (mouseenter)="openDropdownD($event)"  
+                            (mouseleave)="closeDropdownD($event)">
+                            
+                            <ng-container *ngIf="!item.children">
+                                <a [routerLink]="item.url" class="menu-name" (click)="closeMenu()">{{item.text}}</a>
+                            </ng-container>
+
+                            <ng-container *ngIf="item.children">
+
+                                <!-- desktop -->
+                                    <a  class="menu-name d-lg-block d-none" 
+                                    [routerLink]="item.url"
+                                    (click)="closeMenu()">
+                                    {{item.text}}
+                                </a>
+                                
+                                <!-- mobile -->
+                                <!-- has no_child when mobile -->
+                                <ng-container *ngIf="item.no_child"> 
+                                    <a [routerLink]="item.url" class="menu-name d-lg-none d-block" (click)="closeMenu()">{{item.text}}</a>
+                                </ng-container>
+
+                                <!-- hasn't no_child when mobile -->
+                                <ng-container *ngIf="!item.no_child">
+                                    <a  class="menu-name d-lg-none d-block" 
+                                        (click)="listMenuMobile($event)">
+                                        {{item.text}}
+                                        <span class="d-lg-none arr"><i class="icon ion-ios-arrow-down"></i></span>
+                                    </a>
+                                </ng-container>
+
+
+                            </ng-container>
+
+                            
+
+                            <hr class="active-border">
+                            
+                            <div class="child" (click)="closeMenu()" *ngIf="item.children"> 
+                                <div class="container px-lg-3 px-0">
+                                    <div class="row">
+                                        <ng-container *ngIf="!item.two_colom">
+                                            <div class="col-lg-12">
+                                                <ul class="child-list">
+                                                    <li *ngFor="let child of item.children"><a [routerLink]="child.url" [fragment]="child.anchor">{{ child.text }}</a></li>
+                                                </ul>
+                                            </div>
+                                        </ng-container>
+                                        <ng-container *ngIf="item.two_colom">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-6 px-lg-3 px-0">
+                                                        <ul class="child-list">
+                                                            <ng-container *ngFor="let child of item.children; let i = index">
+                                                                <li *ngIf="i % 2 == 0"><a [routerLink]="child.url" [fragment]="child.anchor">{{ child.text }}</a></li>
+                                                            </ng-container>
+                                                            <!-- <li><a routerLink="/services/data-center">Data Center</a></li>
+                                                            <li><a routerLink="/services/unified-communication">Unified Communication</a></li>
+                                                            <li><a routerLink="/services/application">Application</a></li> -->
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-6 px-lg-3 px-0">
+                                                        <ul class="child-list">
+                                                            <ng-container *ngFor="let child of item.children; let i = index">
+                                                                <li *ngIf="i % 2 == 1"><a [routerLink]="child.url" [fragment]="child.anchor">{{ child.text }}</a></li>
+                                                            </ng-container>
+                                                            <!-- <li *ngFor="let child of item.children; let i = index" *ngIf="i % 2 == 1"><a [routerLink]="child.url" [fragment]="child.anchor">{{ child.text }}</a></li> -->
+                                                            <!-- <li><a routerLink="/services/support-services">Support Services</a></li> -->
+                                                            <!-- <li><a routerLink="/services/network-and-infratructure">Network and Infrastructure Technology</a></li>
+                                                            <li><a routerLink="/services/big-data">Analycital and Big Data</a></li>
+                                                            <li><a routerLink="/services/iot">IoT Infrastructure</a></li> -->
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+                
+                <!-- dual language and search -->
+                <div class="en-id pt-lg-2 order-lg-3 order-2">
+                    <ul class="nav no-list justify-content-lg-start justify-content-end">    
+                        
+                        <!-- language -->
+                        <li class="w-lang" [ngClass]="{active: item == lang}" *ngFor="let item of listLang">
+                            <a class="lang" (click)="closeMenu(); changeLanguage(item)">{{item}}</a>
+                        </li>
+
+
+                         <!-- search  -->
+                         <li class="search-warp">
+                            <div class="form-group mb-0 text-lg-left text-right" 
+                                (click)="onOpenSearch($event)">
+                                <input type="text" 
+                                        class="form-control form-search" 
+                                        name="search"  
+                                        id="search"
+                                        placeholder="search and enter ..."  
+                                        [(ngModel)]="search" 
+                                        [ngClass]="{'active-search':  openSearch === true}"
+                                        (keydown)="onSearch($event)">
+                                <img class="ic-search" 
+                                    src="assets/img/icons/search.svg" 
+                                    alt="">
+                            </div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="warp-menu"></div>
+        </div>
+    </div>
+</header>

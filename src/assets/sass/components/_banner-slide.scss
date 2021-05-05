@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// components/_banner-slide
+// -----------------------------------------------------------------------------
+
+
+app-banner-slide {
+    display: block;
+    .bg-img {
+        height: calc(100vh - 100px);
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    h2 {
+        color: $yellow;
+        text-align: center;
+    }
+    a {
+        background-color: $yellow !important;
+        color: white !important;
+    }
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: -1;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+    // .img-preview {
+    //     position: absolute;
+    //     z-index: 1;
+    //     cursor: pointer;
+    //     object-fit: cover;
+    // }
+    // .owl-dots.ng-star-inserted {
+    //     left: 55%;
+    // }
+}
+
+@media (max-width: 575px){
+    app-banner-slide {
+        .bg-img {
+            height: 70vh;
+        }
+        .owl-dots {
+            display: none;
+        }
+    }
+}

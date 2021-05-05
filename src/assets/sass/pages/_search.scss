@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// pages/_search
+// -----------------------------------------------------------------------------
+.search-big{
+    .wrap{
+        border-bottom: 1px #d8c6c6 solid;
+    }
+    .not-find{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.load-data{
+    left: 50%;
+}

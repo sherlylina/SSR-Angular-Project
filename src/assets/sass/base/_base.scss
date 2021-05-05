@@ -1,0 +1,340 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Hide Scrollbar 
+// html {
+//     box-sizing: border-box;
+//     scrollbar-width: none; // mozilla
+//     &::-webkit-scrollbar{
+//         display: none;
+//     }
+//     -ms-overflow-style: none; // ME and IE
+//  }
+
+body, html {
+  overflow-x: hidden;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: Gotham;
+  font-weight: 400;
+  background-color: white;
+  color: $black;
+}
+
+main{
+  position: relative;
+  padding-top: 90px;
+  min-height: 100vh;
+  padding-bottom: 5.5rem;
+}
+
+i.icon{
+  line-height: 0px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+/* list */
+
+.no-list ul, 
+.no-list ol,
+ul.no-list,
+ol.no-list  {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.no-padlist ul, 
+.no-padlist ol,
+ul.no-padlist,
+ol.no-padlist  {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.list-circle ul, 
+ul.list-circle,
+.list-circle ol,
+ol.list-circle
+{
+  list-style-type: circle;
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+/* with class desc so p will has different padding */
+
+.desc{
+  a{
+      color: $yellow;
+  }
+  p{
+      margin-bottom: 1.25rem;
+      &:last-child{
+          margin-bottom: 0px;
+      }
+  }    
+}
+
+
+/* color class */
+
+
+/* button */
+
+.btn {
+  font-size: .9rem;
+}
+
+.btn.focus, .btn:focus {
+  outline: initial;
+  box-shadow: initial;
+}
+
+
+.btn-yellow{
+  background-color: $yellow;
+  color: white;
+  border-radius: 0px;
+  &:hover{
+    // background-color: darken($yellow, 20%);
+    background-color: $red;
+    color: white;
+  }
+}
+
+.read-link{
+  color: #005DA0;
+  font-weight: 400;
+  font-size: .95rem;
+  &:hover{
+      color: $yellow;
+  }
+}
+
+
+.link-href{
+  color: #005DA0;
+  &:hover{
+      color: $yellow;
+  }
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #005DA0 !important;
+  padding: 8px 30px;
+}
+
+/* border */
+
+.yellow-border {
+  border-top: 3px solid $yellow;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  width: 62px;
+}
+
+/* modal */
+
+.modal {
+  background: transparent;
+}
+
+.modal-content{
+  border-radius: initial;
+}
+
+.modal-dialog{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .modal-x {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+      z-index: 1;
+      i{
+          font-size: 35pt;
+          color: #00569F;
+      }
+  }
+  .scrollable{
+       /* width */
+      ::-webkit-scrollbar {
+          width: 5px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px white; 
+          border-radius: 10px;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+          background: #ebe5e5;
+          border-radius: 10px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+          background: #ebe5e5;
+      }
+  }
+}
+
+
+/* background */
+
+.bg-img{
+  height: 420px;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.bg-pg-center{
+  background-position: center;
+}
+
+/* accordion */
+
+.panel-group{
+  .card-header{
+      background-color: white;
+      border-bottom: initial;
+      padding: 0px;
+  }
+  .card{
+      border-radius: initial;
+      border: initial;
+  }
+  .card-body{
+      padding: 0px;
+  }
+}
+
+/* table */
+
+table{
+  tr.head, th.head {
+      background: #005DA0;
+      color: white;
+  }
+}
+
+.table-ver1{
+  tr.data{
+       border-bottom: 1px solid #C4C4C4;
+  }
+  th,td{
+      padding: 15px 20px;
+  }
+}
+
+/* zoom */
+
+.ngxImageZoomContainer{
+  width: initial !important;
+  height: initial !important;
+  img{
+      width: 100%;
+  }
+}
+
+.ngxImageZoomFullContainer.ngxImageZoomLensEnabled {
+  border: 2px solid #005DA0 !important;
+}
+
+/* pagination */
+
+.pagination {
+  a.page-link {
+      color: #005DA0;
+      border: none;
+      margin-left: 15px;
+      &:hover{
+          background-color: initial;
+          border-color: initial;
+      }
+  }
+  .page-item.active .page-link {
+      z-index: 3;
+      color: #fff;
+      background-color: #007bff;
+      border-color: none;
+      background: #005DA0;
+      border-radius: 4px;
+  }
+}
+
+/* responsive */
+
+@media only screen and (min-width: 992px){
+  .modal-lg, .modal-xl {
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+}
+
+@media only screen and (max-width: 991px){
+  main{
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+  .bg-img{
+      height: 330px;
+  }
+  .modal-dialog{
+      .modal-x {
+          i{
+              font-size: 30pt;
+          }
+      }
+  }
+}
+
+
+@media only screen and (max-width: 767px){
+
+  .table-ver1{
+     th{
+         font-size: 0.85rem;
+     }
+     td{
+         font-size: 0.8rem;
+     }
+      th,td{
+          padding: 10px;
+      }
+  }
+}
+
+@media only screen and (max-width: 575px){
+  .bg-img{
+      height: 250px;
+  }
+
+  .full-pad15{
+      margin: 0px -15px;
+  }
+
+  /* border mobile */
+  .blast-none:last-child{
+      .detail{
+          border-bottom: initial !important;
+          padding-bottom: 0px !important;
+      }
+  }
+
+  main.page {
+    background-color: #E5E5E5;
+  }
+}

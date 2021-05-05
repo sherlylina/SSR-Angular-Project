@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// components/_about
+// -----------------------------------------------------------------------------
+
+.about-container {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.img-desc{
+    padding: .25rem;
+    background-color: #fff;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 6%;
+}
+
+.txt-desc{
+    text-align: justify;
+    align-items: center;
+    font-family: Gotham;
+    font-size: 16px;
+
+}
+
+// About Description
+.about-description{
+    .col-md-12{
+        margin-bottom: 0%;
+        margin-top: 3%;
+        h1{
+            text-align: center;
+        }  
+    }
+    .row{
+        padding: 0px;
+        margin: 0px;
+        .txt-desc{
+            line-height: 1.6;
+        }
+    }
+    
+}
+
+
+

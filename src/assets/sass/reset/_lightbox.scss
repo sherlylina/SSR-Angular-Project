@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// reset/_lightbox
+// -----------------------------------------------------------------------------
+
+.lb-data .lb-caption{
+    font-weight: 400;
+    color: white;
+    font-size: 0.8rem;
+    h6{
+        font-size: 0.9rem;
+    }
+}
+
+.lb-nav a.lb-next,
+.lb-nav a.lb-prev{
+    opacity: 1;
+    width: 10%;
+}
+
+.lb-dataContainer{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 6px 6px 4px 6px
+}    
+
+.lightbox-gallery{
+    .lb-dataContainer{
+        background: rgba(0, 0, 0, 0.72);
+        bottom: 0px;
+        top: initial;
+    }    
+}
+

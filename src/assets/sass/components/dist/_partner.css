@@ -1,0 +1,22 @@
+.partner {
+  margin-top: 4%;
+}
+
+.partner-header {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+}
+.partner-header .about-us {
+  content: "";
+  border-bottom: 3px solid black;
+  width: 10%;
+  text-align: center;
+  margin: auto;
+}
+
+.partner-list {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+}

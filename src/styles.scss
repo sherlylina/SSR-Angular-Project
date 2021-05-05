@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import 
+'assets/sass/abstracts/variables',
+'assets/sass/abstracts/mixins',
+'assets/sass/abstracts/functions';
+
+
+// 2. Reset
+@import 
+'assets/sass/reset/owl',
+'assets/sass/reset/masonry',
+'assets/sass/reset/select2',
+'assets/sass/reset/lightbox',
+'assets/sass/reset/ngx-pagination',
+'assets/sass/reset/perfect-scroll';
+
+
+// 2. Base stuff
+@import 
+'assets/sass/base/typography',
+'assets/sass/base/base';
+
+
+// 3. Layout-related sections
+@import 
+'assets/sass/layout/header',
+'assets/sass/layout/footer';
+
+// 4. Componnets
+@import 
+'assets/sass/components/about',
+'assets/sass/components/about-home',
+'assets/sass/components/banner',
+'assets/sass/components/banner-slide',
+'assets/sass/components/career-form',
+'assets/sass/components/gallery',
+'assets/sass/components/list-career',
+'assets/sass/components/list-contact',
+'assets/sass/components/list-event',
+'assets/sass/components/list-news',
+'assets/sass/components/list-product',
+'assets/sass/components/list-service',
+'assets/sass/components/news-detail',
+'assets/sass/components/news-events',
+'assets/sass/components/other-service',
+'assets/sass/components/partner',
+'assets/sass/components/service-description',
+'assets/sass/components/service',
+'assets/sass/components/social-media',
+'assets/sass/components/success-story',
+'assets/sass/components/visi-misi',
+'assets/sass/components/leader',
+'assets/sass/components/service-description',
+'assets/sass/components/list-contact',
+'assets/sass/components/warning',
+'assets/sass/components/banner',
+'assets/sass/components/product-detail',
+'assets/sass/components/other-product';
+
+
+
+// 5. Pages
+@import 
+'assets/sass/pages/search',
+'assets/sass/pages/home';

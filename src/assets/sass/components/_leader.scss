@@ -1,0 +1,250 @@
+// -----------------------------------------------------------------------------
+// components/_leader
+// -----------------------------------------------------------------------------
+
+
+
+.leader-desc{
+    background: rgba(229, 229, 229, 0.77);
+    overflow: hidden;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    transition: 0.4s all;
+    .text{
+        position: relative;
+        border-radius: 0px 0px 5px 5px;
+        padding: 20px;
+        cursor: pointer;
+    }
+}
+
+
+.executive{
+    text-align: center;
+    .executive-leader{
+        text-align: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    span{
+        display: inline-block;
+        background-color: black;
+        width: 100px;
+        height: 3px;
+    }
+}
+
+.leader-wrapper{
+    position: relative;
+    margin-left: 20px;
+    img{
+        margin-top: 15%;
+    }
+    img:hover{
+        cursor: pointer;
+    }
+}
+
+.leader-wrapper:hover .leader-desc  {
+    height: 90px;
+}
+
+section.leader{
+    .container{
+        .owl-nav.ng-star-inserted{
+            position: absolute;
+            left: 50%;
+            .owl-next,.owl-prev{
+                background-color: white !important;
+                color: #F8BA2B;
+                border-radius: 0% !important;
+            }
+            .owl-next{
+                right: 30px;
+            }
+            .owl-prev{
+                left: 30px;
+            }
+        }
+        .owl-dots.ng-star-inserted{
+            bottom:-47px;
+        }
+    }
+}
+
+
+
+  // modal content
+  .modal-content{
+      background-color: rgba($color: #000000, $alpha: 0);
+      padding: 0;
+      margin: 0;
+      border: none;
+      top: 100px;
+      width: 89%;
+      .desc{
+          background-color: white;
+          padding: 10px 20px;
+      }
+      .img{
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 0px;
+          box-sizing: border-box;
+          z-index: 1;
+          position: relative;
+      }
+      img{
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .blured{
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        width: 35px;
+        z-index: 1;
+        right: -20px;
+        background: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 49%, white 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, #5f161600), color-stop(49%, white), color-stop(100%, #c1a7a705));
+       
+        
+      }
+      .bt-x{
+          position: absolute;
+          z-index: 100;
+          top: 5px;
+          right: 30px;
+      }
+
+      button{
+          span.x{
+            position: absolute;
+            top: 0;
+            font-size: 2em;
+            color: yellow;
+            z-index: 10;
+          }
+      }
+  } 
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .leader-desc{
+        .text{
+            p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 140%;
+            }
+            h5 {
+                    font-size: 15px;
+                    font-weight: 550;
+            }
+        }
+    }
+    .modal-content{
+        
+        .br{
+            display: none;
+        }
+        .wrap{
+            h5{
+                color: white;
+            }
+        }
+        .img{
+            img{
+                border-top-left-radius: 2%;
+                border-top-right-radius: 2%;
+            }
+        }
+        .bt-x{
+            top: 20px;
+            right: 45px;
+        }
+        .desc{
+            border-bottom-left-radius: 3%;
+            border-bottom-right-radius: 3%;
+        }
+        .blured{
+            display: none;
+        }
+        
+    }
+
+    section.leader{
+        .container{
+            // For Dots
+            .owl-dots.ng-star-inserted{
+                bottom:-55px;
+            }
+            // For Nav
+            .owl-nav.ng-star-inserted{
+                bottom: -26px;
+                .owl-next,.owl-prev{
+                    background-color: #E5E5E5 !important;
+                }
+            }
+        }
+    }
+  }
+
+//   /* Small devices (portrait tablets and large phones, 600px and up) */
+//   @media only screen and (min-width: 600px) {
+//     body{
+//         background-color: yellow;
+//     }
+//   }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (max-width: 767px) {
+      .modal-content{
+        .wrap-mobile{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(0 0 0 / 30%);
+            h5,p{
+                font-size: 25px;
+                color: white;
+            }
+            h5{
+                color: #FFFFFF;
+            }
+        }
+        .img{
+            img{
+                border-top-left-radius: 2%;
+                border-top-right-radius: 2%;
+            }
+        }
+        .bt-x{
+            top: 20px;
+            right: 45px;
+        }
+      }
+      .blured{
+          display: none;
+      }
+  }
+
+// /* Large devices (laptops/desktops, 992px and up) */
+//   @media only screen and (min-width: 992px) {
+//       body{
+//           background-color: yellowgreen;
+//       }
+//   }
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {
+//     body{
+//         background-color: rgb(65, 3, 49);
+//     }
+// }

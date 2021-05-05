@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// base/typography
+// -----------------------------------------------------------------------------
+@mixin fonts($name, $weight: 400, $file: "", $style: "normal") {
+    @font-face {
+        font-weight: $weight;
+        font-family: $name;
+        font-style: $style;
+        src: url("~/assets/fonts/#{$name}/#{$file}");
+    }
+}
+@mixin warp-text($limit: 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $limit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

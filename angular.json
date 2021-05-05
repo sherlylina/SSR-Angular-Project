@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ssr",
+            "outputPath": "dist/angular-ssr/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/ionicons/dist/css/ionicons.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -103,7 +111,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.server.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -120,6 +129,53 @@
             "production": {
               "devServerTarget": "angular-ssr:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-ssr/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "angular-ssr:build",
+            "serverTarget": "angular-ssr:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-ssr:build:production",
+              "serverTarget": "angular-ssr:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "angular-ssr:build:production",
+            "serverTarget": "angular-ssr:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }

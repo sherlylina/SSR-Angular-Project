@@ -1,0 +1,72 @@
+.about-container {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+.about-container h1 {
+  font-size: 35px;
+  color: #F8BA2B;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.img-desc {
+  padding: 0.25rem;
+  background-color: #fff;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 6%;
+}
+
+.txt-desc {
+  text-align: justify;
+  align-items: center;
+  font-family: Gotham-light;
+  font-size: 16px;
+}
+
+.about-description .col-md-12 {
+  margin-bottom: 0%;
+  margin-top: 3%;
+}
+.about-description .col-md-12 h1 {
+  text-align: center;
+}
+.about-description .col-md-12 .about-us {
+  content: "";
+  border-bottom: 3px solid black;
+  width: 7%;
+  text-align: center;
+  margin: auto;
+}
+
+.button-next-pref {
+  text-align: center;
+  margin: auto;
+}
+
+.leader-desc {
+  position: absolute;
+  width: 100%;
+  font-family: Gotham;
+  font-size: 5px;
+  text-transform: capitalize;
+  color: #333333;
+  bottom: 0;
+  background: rgba(229, 229, 229, 0.77);
+  transition: 0.5s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.leader-wrapper {
+  position: relative;
+}
+
+.leader-wrapper:hover .leader-desc {
+  height: 90px;
+}

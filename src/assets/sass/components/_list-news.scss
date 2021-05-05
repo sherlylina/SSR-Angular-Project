@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// components/_list-news
+// -----------------------------------------------------------------------------
+
+section.list-news {
+    .date {
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 10pt;
+    }
+    img:hover, h4:hover {
+        cursor: pointer;
+    }
+    img {
+        border-radius: 5px;
+    }
+    h4 {
+        margin-top: 10px;
+        @include warp-text(2);
+    }
+    p,.desc {
+        color: $black;
+        font-size: 0.75rem;
+        @include warp-text(4);
+    }
+    .warp {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    .paginate {
+      text-align: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .ngx-pagination .current {
+      padding: 0.1875rem 0.625rem;
+      background: var(--yellow);
+      color: #fefefe;
+      cursor: default;
+      border-radius: 10%;
+    }
+}
+
+@media (max-width: 575px){
+    section.list-news {
+        h4 {
+            font-size: 16px;
+        }
+        .date {
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+    }
+}

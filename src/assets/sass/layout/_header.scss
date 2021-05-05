@@ -1,0 +1,406 @@
+// -----------------------------------------------------------------------------
+// layout/_header
+// -----------------------------------------------------------------------------
+header {
+    background: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.18);
+    padding: 15px 0px;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 20;
+    .form-control:focus {
+        border-color: $yellow;
+        box-shadow: initial;
+    }
+    .all-menu {
+        .menu-name {
+            transition: all 0.2s linear;
+            color: $black;
+            text-transform: capitalize;
+            font-size: 16px;
+        }
+        .w-title {
+            position: relative;
+            &:hover,
+            &.current {
+                .menu-name {
+                    color: $yellow;
+                }
+            }
+        }
+        .parent {
+            .child {
+                opacity: 0;
+                visibility: hidden;
+                overflow: hidden;
+                width: 100%;
+                a {
+                    color: $black;
+                    display: block;
+                    font-weight: 300;
+                    &:hover {
+                        color: $yellow;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+    .en-id {
+        width: 10%;
+        .w-lang {
+            position: relative;
+            padding: 0 5px;
+            a.lang {
+                text-transform: uppercase;
+                font-size: 0.97rem;
+                color: $black;
+                &:hover {
+                    color: $yellow !important;
+                    cursor: pointer;
+                }
+            }
+        }
+        .w-lang.active {
+            a {
+                color: $yellow;
+            }
+        }
+        .w-lang:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 65%;
+            width: 1px;
+            background-color: #333333;
+        }
+        .w-lang:first-of-type:after {
+            visibility: hidden;
+        }
+        .search-warp {
+            padding-left: 10px;
+            position: relative;
+            .ic-search {
+                width: 16px;
+                cursor: pointer;
+                z-index: 1;
+                position: relative;
+            }
+            .form-search {
+                position: absolute;
+                right: 0px;
+                border: 1px solid $black;
+                border-radius: 50px;
+                width: 100%;
+                top: 50%;
+                font-weight: 300;
+                font-size: 0.9rem;
+                transform: translateY(-50%);
+                padding-right: 40px;
+            }
+        }
+    }
+    a {
+        font-weight: 500;
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    .main-header {
+        .w-head {
+            max-width: 1000px;
+        }
+        .w-logo {
+            width: 12%;
+        }
+        .all-menu {
+            width: 78%;
+            padding: 0 30px;
+            .parent {
+                .child {
+                    background: rgba(255, 255, 255, 0.9);
+                    min-height: 60px;
+                    top: 80px;
+                    left: 0px;
+                    transition: all 0.3s linear;
+                    position: fixed;
+                    padding: 20px 0 30px;
+                    z-index: -3;
+                    min-width: 610px;
+                    li {
+                        padding: 10px 0px;
+
+                        &:hover {
+                            a {
+                                color: $yellow;
+                            }
+                        }
+                    }
+                }
+                .child-brands {
+                    .prev-next {
+                        margin-top: 20px;
+                        margin-left: -10px;
+                        margin-right: -10px;
+                    }
+                }
+                .con-news-evnt {
+                    padding-left: 70px !important;
+                }
+
+                .con-service {
+                    padding-left: 55px !important;
+                }
+                &.active-d {
+                    .child {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            hr.active-border {
+                border-top: 3px solid $black;
+                position: absolute;
+                width: 0px;
+                left: 50%;
+                bottom: -41px;
+                transform: translateX(-50%);
+                transition: all 0.3s linear;
+            }
+            .w-title {
+                &:hover {
+                    hr.active-border {
+                        width: 100%;
+                    }
+                }
+                &.current {
+                    hr.active-border {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .en-id {
+            width: 10%;
+            .search-warp {
+                .form-search {
+                    width: 0px;
+                    transition: all 0.3s linear;
+                    visibility: hidden;
+                    opacity: 0;
+                    &.active-search {
+                        width: 300px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            .w-lang {
+                // a.lang{
+                //     font-size: 7pt;
+                // }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .main-header {
+        .w-head {
+            max-width: 1200px;
+        }
+        .all-menu {
+            padding: 0 60px;
+            .parent {
+                .child {
+                    top: 90px;
+                    .con-service {
+                        padding-left: 74px !important;
+                    }
+                    .con-news-evnt {
+                        padding-left: 88px !important;
+                    }
+                }
+            }
+            hr.active-border {
+                bottom: -45px;
+            }
+        }
+        .en-id {
+            .w-lang {
+                // a.lang{
+                //     font-size: 8pt;
+                // }
+            }
+        }
+    }
+}
+
+// tambahan diky
+.main-header .all-menu .parent .child {
+    position: absolute;
+    top: 50px;
+    background-color: transparent;
+    z-index: 10;
+}
+.warp-menu {
+    content: "";
+    background-color: rgb(255 255 255 / 0.90);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s linear;
+    visibility: hidden;
+    overflow: hidden;
+}
+.warp-menu.show {
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .main-header {
+        .ml-16 {
+            margin-left: -16px;
+        }
+    }
+}
+@media only screen and (max-width: 991px) {
+    .main-header {
+        overflow: hidden;
+        height: 50px;
+        padding: 10px 0px;
+        transition: 0.3s linear;
+        .ml-16 {
+            margin-left: 0px;
+        }
+        .container {
+            .row {
+                margin: 0;
+            }
+        }
+        .w-logo {
+            // margin-bottom: 40px;
+            width: 100%;
+            .logo {
+                width: 86px;
+            }
+        }
+        .hamburger {
+            span {
+                cursor: pointer;
+                display: block;
+                background: black;
+                width: 23px;
+                height: 2px;
+                margin-bottom: 5px;
+                transform: rotate(0deg);
+                right: 0px;
+                top: 0px;
+                position: initial;
+                transition: all 0.3s linear;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .all-menu {
+            width: 100%;
+            display: none;
+            padding: 0 15px;
+            .menu-name {
+                padding: 8px 0px;
+                display: block;
+                position: relative;
+            }
+            span.arr {
+                position: absolute;
+                right: 5px;
+                color: $black;
+            }
+            .parent {
+                .child {
+                    position: absolute;
+                    padding: 5px 0px;
+                    background: white;
+                    a {
+                        color: black;
+                        text-transform: uppercase;
+                        font-size: 10pt;
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                    li {
+                        padding-top: 8px;
+                    }
+                }
+                &.active-m {
+                    .child {
+                        position: initial;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    span.arr {
+                        i:before {
+                            transform: rotate(180deg);
+                            transition: 0.3s linear;
+                        }
+                    }
+                }
+            }
+            hr.active-border {
+                border-top: 1px solid $black;
+                width: 100%;
+                margin: 0px;
+            }
+        }
+        .en-id {
+            width: 100%;
+            display: none;
+            .search-warp {
+                margin: 25px 0px;
+                width: 100%;
+            }
+        }
+        &.active-m {
+            height: 100vh;
+            overflow-y: scroll;
+            .all-menu,
+            .en-id {
+                display: block;
+            }
+            .w-logo {
+                margin-bottom: 35px;
+            }
+            .hamburger {
+                span:nth-child(1) {
+                    width: 18px;
+                    transform: rotate(45deg);
+                    top: 4px;
+                    position: relative;
+                }
+                span:nth-child(2) {
+                    display: none;
+                }
+                span:nth-child(3) {
+                    width: 18px;
+                    transform: rotate(-45deg);
+                    top: -3px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

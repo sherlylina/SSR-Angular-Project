@@ -1,0 +1,20 @@
+<section class="banner-slide">
+    <owl-carousel-o [options]="customOptions" (changed)="onChangeSlide($event)">
+        <ng-container class="tes" *ngFor="let slide of CompData; let i = index">
+            <ng-template carouselSlide>
+                <div class="align-items-center bg-img flex-column justify-content-center ng-star-inserted" [style.background-image]="'url('+ slide.file +')'">
+
+                    <!-- type = video -->
+                    <video *ngIf="slide.type === 'image'" preload="metadata" playsinline="" loop muted="" id="video-{{i}}" [src]="path + slide.filename"></video>
+
+                    <!-- type = embed -->
+                    <!-- <img *ngIf="slide.type === 'embed'" class="img-preview" src="https://img.youtube.com/vi/9Hds8g_Y4t4/maxresdefault.jpg" [alt]="slide.title"> -->
+                    <iframe *ngIf="slide.type === 'embed'" width="100%" height="100%" frameborder="0" id="embed-{{i}}" allow="autoplay" allowfullscreen="" src="https://www.youtube.com/embed/9Hds8g_Y4t4?autoplay=0&rel=0&controls=0&loop=1&mute=1"></iframe>
+
+                    <h2 [class]="slide.title_color">{{ slide.title }}</h2>
+                    <a [href]="slide.item" role="button" class="btn mt-4">{{ lang?.learn_more }}</a>
+                </div>
+            </ng-template>
+          </ng-container>
+    </owl-carousel-o>
+</section>

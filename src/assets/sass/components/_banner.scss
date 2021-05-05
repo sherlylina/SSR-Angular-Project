@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// components/_banner
+// -----------------------------------------------------------------------------
+
+section.banner {
+    h1{
+        font-size: 35px;
+        color: #F8BA2B;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 25px;
+    }
+    .back-banner:hover{
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 767px){
+    section.banner {
+        h1, span, a{
+            display: none;
+        }
+    }
+    main.page.news-event.detail{
+        h1, span, a {
+           display: none;
+        }
+    }
+
+}

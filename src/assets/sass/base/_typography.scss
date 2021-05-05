@@ -1,0 +1,106 @@
+// -----------------------------------------------------------------------------
+// base/typography
+// -----------------------------------------------------------------------------
+
+// Thin 100
+// Extra-light 200
+// Light 300
+// Regular 400
+// Medium 500
+// Semi-bold 600
+// Bold 700
+// Extra-bold 800
+// Black 900
+
+// OLD
+@include fonts('Gotham', 400, 'Gotham-Book.ttf');
+@include fonts('Gotham', 500, 'Gotham-Medium.ttf');
+@include fonts('Gotham', 700, 'Gotham-Bold.ttf');
+
+
+body {
+    font-family: Gotham;
+    font-weight: 400;
+    background-color: white;
+    color: $black;
+}
+h1 {
+    @include heading(2.188rem, 700); // 35px
+    text-transform: uppercase;
+    a { color: $black; }
+}
+h2 { 
+    @include heading(2.188rem, 700); // 35px
+    text-transform: uppercase;
+    a { color: $black; }
+}
+h3 { 
+    @include heading(1.563rem, 700); // 25px
+    color: $blue;
+    a { color: $blue; }
+}
+h4 { 
+    @include heading(1.125rem, 700); // 18px
+    color: $blue;
+    a { color: $blue; }
+}
+h5 {
+    @include heading(1rem, 700); // 16px
+    a { color: $black; }
+}
+h6 { 
+    @include heading(1rem, 700); // 16px
+    a { color: $black; }
+}
+p  { 
+    @include heading(1rem, 400); // 16px
+    line-height: 170%;
+}
+a {
+    color: $yellow;
+    &:hover {
+        text-decoration: none;
+        color: $red;
+    }
+}
+// ul,li, div, span {
+//     @include heading(1rem, 400); // 16px
+// }
+
+.text-yellow {
+    color: $yellow;
+}
+
+.title {
+    text-align: center;
+    padding-top: 45px;
+    h1 {
+        margin: 0;
+        line-height: normal;
+    }
+    span {
+        display: inline-block;
+        background-color: black;
+        width: 100px;
+        height: 3px;
+    }
+}
+
+
+
+// Convert Font Size MSA to REM
+
+// Font size : 16px = 1rem
+// Font size : 9px = 0.5625rem
+// Font size : 15px = 0.9375rem
+// Font size : 21px = 1.3125rem
+// Font size : 24px = 1.5rem
+// Font size : 30px = 1.875rem
+// Font size : 64px = 4rem;
+// Font size : 14px = 0.875rem
+// Font size : 18px = 1.125rem
+// Font size : 12px = 0.75rem
+// Font size : 36px = 2.25rem
+// Font size : 48px = 3rem
+// Font size : 72px = 4.5rem
+// Font size : 144px = 9rem

@@ -1,0 +1,90 @@
+// -----------------------------------------------------------------------------
+// layout/_footer
+// -----------------------------------------------------------------------------
+
+footer{
+	background: $gray;
+	position: relative;
+	padding: 40px 0;
+	width: 100%;
+	color: #fff;
+	font-weight: 400;
+	.foot_nav {
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+		a {
+			font-size: 10.6px;
+			color: #fff;
+			&:hover {
+				color: #0d579e;
+			}
+		}
+		li {
+			position: relative;
+			padding: 0 20px;
+			&:first-child{
+				padding-left: 0px;
+			}
+			&:last-child{
+				padding-right: 0px;
+			}
+			&:last-child{
+				&:before{
+					content: "";
+					width: 4px;
+					height: 4px;
+					position: absolute;
+					left: 0;
+					top: 50%;
+					background: #fff;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+	p {
+		font-size: 16px;
+		margin-bottom: 0;
+		font-weight: 300;
+	}
+	.email {
+		font-weight: 300;
+	}
+	.w-icons a {
+		padding-right: 10px;
+	}
+	.back-top {
+		position: absolute;
+		top: 20px;
+		right: 70px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	h6 a, .email {
+		color: white;
+	}
+}
+
+// Responsive 
+
+@media only screen and (max-width: 767px){
+	footer{
+		padding: 20px 0;
+		p {
+			font-size: 12px;
+		}
+		.back-top {
+			display: none;
+		}
+		h6 {
+			margin: 10px 0;
+		}
+	}
+}
+

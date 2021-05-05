@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// components/_detail
+// -----------------------------------------------------------------------------
+
+section.news-detail {
+    .desc {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 575px){
+    section.news-detail {
+        h1 {
+            font-size: 18px;
+            color: $blue;
+            text-transform: none;
+            padding: 20px 0 0px 0;
+        }
+    }
+}

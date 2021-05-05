@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// reset/_owl
+// -----------------------------------------------------------------------------
+
+// dots
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $yellow;
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+.owl-dots.ng-star-inserted {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// nav
+.owl-prev, .owl-next {
+    background-color: $yellow !important;
+    border-radius: 50% !important;
+    width: 25px;
+    height: 25px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+}
+.owl-prev{
+    left: -50px;
+}
+.owl-next{
+    right: -50px;
+}
+
+@media only screen and (max-width: 575px){
+    .owl-prev{
+        left: -10px;
+    }
+    .owl-next{
+        right: -10px;
+    }
+}
+
+// .owl-theme .owl-nav .owl-prev,.owl-theme .owl-nav .owl-next {
+//     color: #FFF;
+//     font-size: 14px;
+//     display: inline-block;
+//     cursor: pointer;
+//     border-radius: 3px;
+//     background-color: white;
+//     padding: 0;
+//     margin-top: 77px;
+// }
+
+@media only screen and (max-width : 600px){
+    .owl-theme .owl-nav .owl-prev, .owl-theme .owl-nav .owl-next{
+        margin-top: 0;
+        right: 0px;
+    }
+    .owl-theme .owl-nav .owl-prev{
+        left: 0px;
+    }
+}
