@@ -13,7 +13,7 @@ const routerOptions: ExtraOptions = {
 };
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
 ];
   
 @NgModule({
@@ -27,6 +27,6 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule {
+export class AppRoutingModule { 
 
 }
