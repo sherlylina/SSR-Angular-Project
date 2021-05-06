@@ -7,14 +7,9 @@ import { environment as env } from "src/environments/environment";
 // plugin
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 
-// service
-import { ComponentLookup } from 'src/app/shared/directive/classLookup.directive';
-
 // interface
 import { ApiService } from '../../shared/service/api.service';
 
-
-@ComponentLookup('BannerSlideComponent')
 @Component({
   selector: 'app-banner-slide',
   templateUrl: './banner-slide.component.html',
@@ -23,7 +18,7 @@ import { ApiService } from '../../shared/service/api.service';
 })
 export class BannerSlideComponent implements OnInit, OnChanges {
 
-  CompData:any;
+  @Input() CompData:any;
   path:string = env.API_URL + "/storage/banners/"
   customOptions: OwlOptions = {
     loop: true,

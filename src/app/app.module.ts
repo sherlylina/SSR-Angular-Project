@@ -13,11 +13,13 @@ import { BannerSlideComponent } from './components/banner-slide/banner-slide.com
 
 /* Plugins */
 import { CarouselModule as CarouselModuleOwl } from 'ngx-owl-carousel-o';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BannerSlideComponent
+    BannerSlideComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -29,6 +31,7 @@ import { CarouselModule as CarouselModuleOwl } from 'ngx-owl-carousel-o';
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  entryComponents: [ BannerSlideComponent ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
