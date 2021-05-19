@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 /* Modules Routing */
 import { AppRoutingModule } from './app-routing.module';
 
-/* components */
+/* Components */
 import { AppComponent } from './app.component';
 import { BannerSlideComponent } from './components/banner-slide/banner-slide.component';
 

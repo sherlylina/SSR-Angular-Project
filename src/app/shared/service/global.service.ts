@@ -30,8 +30,8 @@ export class GlobalService {
 
   // Meta
   updateMeta(title:string, keyw:string, desc:string) {
-    this.title.setTitle(title + ' | GrandTech Cloud Services');
-    this.meta.updateTag({ name: 'title', content: title + ' | GrandTech Cloud Services' });
+    this.title.setTitle(title + ' | Angular SSR');
+    this.meta.updateTag({ name: 'title', content: title + ' | Angular SSR' });
     this.meta.updateTag({ name: 'keywords', content: keyw });
     this.meta.updateTag({ name: 'description', content: desc });
   }

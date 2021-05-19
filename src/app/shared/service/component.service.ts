@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 
+/* Dsirective */
 import { ComponentItem } from '../directive/component-item';
+
+/* Components */
 import { BannerSlideComponent } from '../../components/banner-slide/banner-slide.component';
 
 @Injectable({
@@ -8,8 +11,8 @@ import { BannerSlideComponent } from '../../components/banner-slide/banner-slide
 })
 export class ComponentService {
   getComponents() {
-    return [
-      new ComponentItem(BannerSlideComponent)
-    ];
+    return {
+      BannerSlide: new ComponentItem(BannerSlideComponent)
+    };
   }
 }
